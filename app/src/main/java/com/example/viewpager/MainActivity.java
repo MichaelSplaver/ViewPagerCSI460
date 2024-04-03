@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPagerFragmentAdapter adapter;
 
     // array for tab labels
-    private String[] labels = new String[]{"Calls", "Chats", "Status"};
+    private String[] labels = new String[]{"Calls", "Chats", "Status", "Contacts"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ViewPagerFragmentAdapter(this);
         // set adapter to viewPager2
         viewPager2.setAdapter(adapter);
+
+
     }
 
     // create adapter to attach fragments to viewpager2 using FragmentStateAdapter
@@ -69,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
                     return new ChatsFragment(); // chats fragment
                 case 2:
                     return new StatusFragment(); // status fragment
+                case 3:
+                    return new ContactsFragment();
             }
             return new ChatsFragment(); //chats fragment
         }
